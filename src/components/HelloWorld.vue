@@ -1,9 +1,15 @@
 <script setup lang="ts">
 import { ref } from 'vue';
+import { getList } from '@/apis/user';
 
+getList({ id: 2 });
 defineProps<{ msg: string }>();
 
 const count = ref(0);
+
+// //读取@/components/BaseEchartsModel下所有.vue文件
+// const v = import.meta.glob('@/components/HelloWorld/config.ts');
+// console.log(v)
 </script>
 
 <template>
@@ -30,7 +36,10 @@ const count = ref(0);
   <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p>
 </template>
 
-<style scoped>
+<style lang="scss">
+body {
+  color: $test-color;
+}
 .read-the-docs {
   color: #888;
 }
